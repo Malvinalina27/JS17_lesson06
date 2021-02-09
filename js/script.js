@@ -20,11 +20,11 @@ let startGame = function() {
       alert('Загаданное число больше');
       userNumber = prompt('Угадай число от 1 до 100');
       searchNumber();
-    } else if (isNaN(userNumber) || userNumber.trim() === '') {
+    } else if (userNumber === '' || isNaN(userNumber)) {
       alert('Введи число!');
       userNumber = prompt('Угадай число от 1 до 100');
       searchNumber();
-    } else if (userNumber === randomNumber) {
+    } else if (+userNumber === randomNumber) {
       alert('Поздравляю, Вы угадали!!!');
     }  
   };
