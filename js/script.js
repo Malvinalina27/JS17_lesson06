@@ -10,13 +10,13 @@ let startGame = function() {
   
   let searchNumber = function() {
       
-    if (+userNumber === null) {
+    if (userNumber === null) {
       alert('Игра окончена');    
     } else if (userNumber > randomNumber) {
       alert('Загаданное число меньше');
       userNumber = prompt('Угадай число от 1 до 100');
       searchNumber();
-    } else if (+userNumber < randomNumber && +userNumber > 0) {
+    } else if (userNumber < randomNumber ) {
       alert('Загаданное число больше');
       userNumber = prompt('Угадай число от 1 до 100');
       searchNumber();
@@ -24,7 +24,7 @@ let startGame = function() {
       alert('Введи число!');
       userNumber = prompt('Угадай число от 1 до 100');
       searchNumber();
-    } else if (+userNumber === randomNumber) {
+    } else if (userNumber === randomNumber) {
       alert('Поздравляю, Вы угадали!!!');
     }  
   };
