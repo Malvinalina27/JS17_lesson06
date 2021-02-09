@@ -2,9 +2,6 @@
 
 let startGame = function() {
 
-  let isNumber = function(n) {
-    return !isNaN(parseFloat(n));
-  };
   
   let randomNumber = Math.floor(Math.random() * 100) + 1;
   console.log(randomNumber);
@@ -13,11 +10,13 @@ let startGame = function() {
   
   let searchNumber = function() {
       
-    if (userNumber > randomNumber) {
+    if (+userNumber === null) {
+      alert('Игра окончена');    
+    } else if (userNumber > randomNumber) {
       alert('Загаданное число меньше');
       userNumber = prompt('Угадай число от 1 до 100');
       searchNumber();
-    } else if (+userNumber < randomNumber && userNumber > 0) {
+    } else if (+userNumber < randomNumber && +userNumber > 0) {
       alert('Загаданное число больше');
       userNumber = prompt('Угадай число от 1 до 100');
       searchNumber();
@@ -27,9 +26,7 @@ let startGame = function() {
       searchNumber();
     } else if (+userNumber === randomNumber) {
       alert('Поздравляю, Вы угадали!!!');
-    } else if (+userNumber === null) {
-      alert('Игра окончена');    
-    }
+    }  
   };
   searchNumber();
 };
